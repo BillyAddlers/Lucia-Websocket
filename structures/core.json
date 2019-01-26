@@ -1,0 +1,19 @@
+{
+	"owners" : ["337028800929857536", "427473949476126740", "316063819824627712", "475230849239875584", "340142066128388096"],
+	"GOOGLE_KEY": "AIzaSyDlffFz9s4Zref119kwvlCs7ZJqhp5tl8k", 
+    "DBL_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ3NTIyNTk1NDEwMTIzMTYyNiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTQwMjQ0OTk0fQ.NiyL2fsiDZ8eI0LdxbKmQ1DiQdDabi-Xvx-fxYXat7U",
+    "nickname": "Hizume",
+    "url": "mongodb://nine:lolilegal4569@localhost:27017/discord",
+    "prefix": "d:",
+    "debug": "true",
+    "nodes": [
+        { "host": "localhost", "port": 6000, "region": "asia", "password": "lolilavalink" },
+        { "host": "localhost", "port": 6000, "region": "eu", "password": "lolilavalink" },
+        { "host": "localhost", "port": 6000, "region": "us", "password": "lolilavalink" }
+    ],
+    "restnode": {
+        "host": "localhost",
+        "port": 2333,
+        "password":"lolilavalink"
+    }
+}

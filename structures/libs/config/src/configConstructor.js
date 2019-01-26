@@ -14,7 +14,7 @@ class Config {
 
     raw() {
         try {
-            return inject('./structures/core.json');
+            return require('../../../../structures/core.json');
         } catch (err) {
             if (err.code === 'MODULE_NOT_FOUND') {
                 console.error('Configuration file is not detected!');

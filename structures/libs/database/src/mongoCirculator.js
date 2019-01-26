@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 class database {
 	constructor(options = {}) {
-		super();
 		this.options = options;
 
 		if(!this.options.url) throw ReferenceError('You need to invoke MongoDB Database Circulator with "url" option!');
