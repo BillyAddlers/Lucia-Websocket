@@ -76,6 +76,9 @@ class Web extends EventEmitter {
             console.info(Date.now() + "Ping has been received!");
             res.sendStatus(200);
         })
+        setInterval(() => {
+            http.get(`http://${this.options.projectURL}/ping`);
+        }, 280000);
     }
 
     passport(variable = {}) {
