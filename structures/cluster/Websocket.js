@@ -11,10 +11,10 @@ class Web extends EventEmitter {
         super();
 
         this.conf = global.config;
-        this.app = express()
         this.db = global.db;
-        this.options = options;
+        this.options = this.mergeDefault(options);
         this.Promise = require('bluebird');
+        this.app = express()
 
         if(this.options.useURLEncoded === 'true') {
             this.app.use(urlencoded({ extended: false }))
@@ -39,7 +39,7 @@ class Web extends EventEmitter {
         }
         
         var rootpath = require('app-root-path');
-        this.app.use(express.static(join(rootpath, '../../public')))
+        this.app.use(express.static(join('../../public')))
         this.app.use(function(err, req, res, next) {
 			res.locals.message = err.message;
 			res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -81,8 +81,9 @@ class Web extends EventEmitter {
         }, 280000);
     }
 
-    passport(variable = {}) {
+    passport(variableRaw = {}) {
         var Frontend = require('./Passport')
+        var variable = this.mergeDefault(variableRaw);
         var ppsession = new Frontend({
             scopes: variable.scopes,
             sessionSecret: variable.sessionSecret,
@@ -90,6 +91,17 @@ class Web extends EventEmitter {
             sessionSaveUnit: variable.sessionSaveUnit,
         })
         ppsession.main(this.app);
+    }
+
+    static mergeDefault(given) {
+        for (const key in def) {
+            if(!has(given, key) || given[key] === undefined) {
+                given[key] = def[key];
+            } else if(given[key] === Object(given[key])) {
+                given[key] = this.mergeDefault(given[key]);
+            }
+        }
+        return given;
     }
 }
 

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 class database {
 	constructor(options = {}) {
-		this.options = options;
+		this.options = this.mergeDefault(options)
 
 		if(!this.options.url) throw ReferenceError('You need to invoke MongoDB Database Circulator with "url" option!');
 		(async function dbInit() {
@@ -19,6 +19,16 @@ class database {
 			})(mongoose);
 		})();
 	}
+	static mergeDefault(given) {
+        for (const key in def) {
+            if(!has(given, key) || given[key] === undefined) {
+                given[key] = def[key];
+            } else if(given[key] === Object(given[key])) {
+                given[key] = Util.mergeDefault(given[key]);
+            }
+        }
+        return given;
+    }
 }
 
 module.exports = database;

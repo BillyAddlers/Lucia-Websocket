@@ -2,7 +2,7 @@ const DBDev = require('dbdapi.js');
 
 class Main extends DBDev {
     constructor(options = {}) {
-        this.options = options;
+        this.options = this.mergeDefault(options);
         this.Promise = require('bluebird');
 
         super(options.token, options.clientID, options.ownerID)
@@ -20,6 +20,16 @@ class Main extends DBDev {
             if(!botData || botData === undefined) { botData = 'Unregistered-Bot#0000' };
             resolve(botData);
         })
+    }
+    static mergeDefault(given) {
+        for (const key in def) {
+            if(!has(given, key) || given[key] === undefined) {
+                given[key] = def[key];
+            } else if(given[key] === Object(given[key])) {
+                given[key] = Util.mergeDefault(given[key]);
+            }
+        }
+        return given;
     }
 }
 

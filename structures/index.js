@@ -3,7 +3,8 @@ require('./libs/log');
 global.Promise = require('bluebird');
 
 const config = new (require('./libs/config'))();
-const db = new (require('./libs/database'))({
+const Database = require('./libs/database');
+const db = new Database({
     url: process.env.DB_URL
 });
 const path = require('path');

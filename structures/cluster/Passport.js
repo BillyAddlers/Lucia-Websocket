@@ -6,9 +6,7 @@ const cookieParser = require('cookie-parser');
 
 class Main {
     constructor(options = {}) {
-        super()
-
-        this.options = options;
+        this.options = this.mergeDefault(options)
 
         passport.serializeUser(function(user, done) {
             done(null, user);
@@ -48,6 +46,16 @@ class Main {
     checkAuth(req, res, next) {
         if(req.isAuthenticated()) return next();
         res.send({ result: 'You\'re not logged in!'});
+    }
+    static mergeDefault(given) {
+        for (const key in def) {
+            if(!has(given, key) || given[key] === undefined) {
+                given[key] = def[key];
+            } else if(given[key] === Object(given[key])) {
+                given[key] = this.mergeDefault(given[key]);
+            }
+        }
+        return given;
     }
 }
 

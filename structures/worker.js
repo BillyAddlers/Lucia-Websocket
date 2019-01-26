@@ -14,17 +14,16 @@ process.on('error', err => console.error(err));
 process.on('uncaughtException', err => console.error(err));
 
 (async function init() {    
-    global.lucia = new Lucia({
-        disableEveryone: true,
-        fetchAllMembers: true
-    });
-
     global.websocket = new Websocket({
         useURLEncoded: 'extended',
         debug: true,
         useJSON: true,
         port: process.env.PORT,
         projectURL: process.env.PROJECT_URL
+    });
+    global.lucia = new Lucia({
+        disableEveryone: true,
+        fetchAllMembers: true
     });
 
     lucia.on('warn', console.warn);

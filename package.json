@@ -56,6 +56,7 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "extendify": "^1.0.0",
     "fs": "0.0.1-security",
     "http-errors": "^1.7.1",
     "jstransformer": "^1.0.0",
@@ -72,6 +73,8 @@
     "shelljs": "^0.8.3",
     "util": "^0.11.1",
     "uws": "^99.0.0",
-    "chalk": "^2.4.1"
+    "chalk": "^2.4.1",
+    "lodash": "^4.17.11",
+    "memory-cache": "^0.2.0"
   }
 }
