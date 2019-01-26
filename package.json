@@ -1,0 +1,76 @@
+{
+  "name": "lucia",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "A websocket of Lolization LLC, in purpose of deploying",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "11.x"
+  },
+  "keywords": [
+    "Loli",
+    "Nekomimi",
+    "Cat",
+    "Lucia",
+    "Kawaii"
+  ],
+  "author": "Riichi_Rusdiana#6815",
+  "contributor": [
+    {
+      "name": "Riichi Rusdiana",
+      "discordTag": "Riichi_Rusdiana#6815",
+      "github": "https://github.com/BillyAddlers/"
+    },
+    {
+      "name": "youKnowOwO",
+      "discordTag": "OwO#8287",
+      "github": "https://github.com/youKnowOwO/"
+    },
+    {
+      "name": "Sharif",
+      "discordTag": "Sharif#9781",
+      "github": "https://github.com/SharifPoetra/"
+    },
+    {
+      "name": "Mazure Finnson",
+      "discordTag": "MazureFinnson#5492",
+      "github": "https://github.com/MazureFinnson/"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "body-parser": "^1.18.3",
+    "child_process": "^1.0.2",
+    "collections": "^5.1.5",
+    "collectionsjs": "^0.3.2",
+    "constantinople": "github:pugjs/constantinople",
+    "cookie-parser": "^1.4.3",
+    "cpu-stat": "^2.0.1",
+    "debug": "^4.1.0",
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.1.0",
+    "erlpack": "github:discordapp/erlpack",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "http-errors": "^1.7.1",
+    "jstransformer": "^1.0.0",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2",
+    "mongoose": "^5.3.13",
+    "node-superfetch": "^0.1.9",
+    "npm": "^6.4.1",
+    "passport": "^0.4.0",
+    "passport-discord": "^0.1.3",
+    "passport-oauth2": "^1.4.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
+    "shelljs": "^0.8.3",
+    "util": "^0.11.1",
+    "uws": "^99.0.0"
+  }
+}
